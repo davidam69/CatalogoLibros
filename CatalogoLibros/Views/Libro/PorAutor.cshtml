@@ -1,0 +1,26 @@
+﻿@model List<CatalogoLibros.Models.Libro>
+
+<h2>Libros de @ViewBag.AutorNombre</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Año</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Libro" asp-action="Detalle" asp-route-id="@libro.id">@libro.titulo</a>
+                </td>
+                <td>@libro.anioPublicacion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Libro" asp-action="Index">Volver al catálogo</a>
+

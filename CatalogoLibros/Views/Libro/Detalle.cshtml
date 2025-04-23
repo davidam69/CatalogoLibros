@@ -1,0 +1,9 @@
+﻿@model CatalogoLibros.Models.Libro
+
+<h2>Detalle del Libro</h2>
+<ul>
+    <li><strong>Título:</strong> @Model.titulo</li>
+    <li><strong>Año:</strong> @Model.anioPublicacion</li>
+    <li><strong>Autor:</strong> @Model.autor.nombre</li>
+</ul>
+<a asp-controller="Libro" asp-action="Index">Volver al catálogo</a>

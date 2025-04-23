@@ -1,0 +1,78 @@
+autor_id,autor_nombre,libro_titulo,anio_publicacion
+1,George Orwell,1984,1949
+1,George Orwell,Rebelión en la granja,1945
+2,Ray Bradbury,Fahrenheit 451,1953
+2,Ray Bradbury,Crónicas Marcianas,1950
+3,Aldous Huxley,Un mundo feliz,1932
+3,Aldous Huxley,La Isla,1962
+4,J.R.R. Tolkien,El Hobbit,1937
+4,J.R.R. Tolkien,El Señor de los Anillos,1954
+5,J.K. Rowling,Harry Potter y la piedra filosofal,1997
+5,J.K. Rowling,Harry Potter y la cámara secreta,1998
+6,Isaac Asimov,Fundación,1951
+6,Isaac Asimov,Yo Robot,1950
+7,Arthur C. Clarke,2001: Una odisea espacial,1968
+7,Arthur C. Clarke,Cita con Rama,1973
+8,Mary Shelley,Frankenstein,1818
+9,Bram Stoker,Drácula,1897
+10,Stephen King,El resplandor,1977
+10,Stephen King,It,1986
+11,Philip K. Dick,Sueñan los androides con ovejas eléctricas,1968
+11,Philip K. Dick,El hombre en el castillo,1962
+12,Frank Herbert,Dune,1965
+13,Ernest Hemingway,El viejo y el mar,1952
+13,Ernest Hemingway,Por quién doblan las campanas,1940
+14,F. Scott Fitzgerald,El gran Gatsby,1925
+15,Leo Tolstoy,Anna Karenina,1877
+15,Leo Tolstoy,Guerra y paz,1869
+16,Jane Austen,Orgullo y prejuicio,1813
+16,Jane Austen,Emma,1815
+17,Charles Dickens,Oliver Twist,1838
+17,Charles Dickens,Historia de dos ciudades,1859
+18,Mark Twain,Las aventuras de Tom Sawyer,1876
+18,Mark Twain,Las aventuras de Huckleberry Finn,1884
+19,Victor Hugo,Los Miserables,1862
+19,Victor Hugo,Notre-Dame de París,1831
+20,Oscar Wilde,El retrato de Dorian Gray,1890
+21,H.G. Wells,La guerra de los mundos,1898
+21,H.G. Wells,La máquina del tiempo,1895
+22,Edgar Allan Poe,El cuervo,1845
+22,Edgar Allan Poe,Los crímenes de la calle Morgue,1841
+23,Jules Verne,Viaje al centro de la Tierra,1864
+23,Jules Verne,La vuelta al mundo en 80 días,1873
+24,Louisa May Alcott,Mujercitas,1868
+25,Emily Brontë,Cumbres Borrascosas,1847
+26,Charlotte Brontë,Jane Eyre,1847
+27,Herman Melville,Moby-Dick,1851
+28,Alexandre Dumas,Los tres mosqueteros,1844
+28,Alexandre Dumas,El conde de Montecristo,1845
+29,Jack London,Colmillo Blanco,1906
+29,Jack London,La llamada de lo salvaje,1903
+30,George R.R. Martin,Juego de tronos,1996
+30,George R.R. Martin,Choque de reyes,1998
+31,Dan Brown,El código Da Vinci,2003
+31,Dan Brown,Ángeles y demonios,2000
+32,Kurt Vonnegut,Matadero cinco,1969
+33,Harper Lee,Matar a un ruiseñor,1960
+34,Miguel de Cervantes,Don Quijote de la Mancha,1605
+35,William Shakespeare,Macbeth,1606
+35,William Shakespeare,Otelo,1603
+36,Dante Alighieri,La Divina Comedia,1320
+37,Homero,La Ilíada,-750
+37,Homero,La Odisea,-725
+38,Gabriel García Márquez,Cien años de soledad,1967
+38,Gabriel García Márquez,El amor en los tiempos del cólera,1985
+39,Mario Vargas Llosa,La ciudad y los perros,1963
+39,Mario Vargas Llosa,Conversación en La Catedral,1969
+40,Julio Cortázar,Rayuela,1963
+41,Roberto Bolaño,2666,2004
+42,Isabel Allende,La casa de los espíritus,1982
+43,Carlos Ruiz Zafón,La sombra del viento,2001
+44,Umberto Eco,El nombre de la rosa,1980
+45,Albert Camus,El extranjero,1942
+46,Franz Kafka,La metamorfosis,1915
+47,Marcel Proust,En busca del tiempo perdido,1913
+48,Virginia Woolf,La señora Dalloway,1925
+49,Joseph Conrad,El corazón de las tinieblas,1899
+50,Antoine de Saint-Exupéry,El principito,1943
+
