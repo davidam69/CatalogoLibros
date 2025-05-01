@@ -6,5 +6,7 @@
         public string? titulo { get; set; }
         public int anioPublicacion { get; set; }
         public Autor? autor { get; set; }
+        public string? sinopsis{ get; set; }
+
     }
 }

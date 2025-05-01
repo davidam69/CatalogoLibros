@@ -7,6 +7,7 @@
         <tr>
             <th>Título</th>
             <th>Año</th>
+			<th>Sinopsis</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
                     <a asp-controller="Libro" asp-action="Detalle" asp-route-id="@libro.id">@libro.titulo</a>
                 </td>
                 <td>@libro.anioPublicacion</td>
+				<td>@libro.sinopsis</td>
             </tr>
         }
     </tbody>

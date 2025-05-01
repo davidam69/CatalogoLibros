@@ -29,7 +29,7 @@ public class LibroController : Controller
     {
         var rutaCSV = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/autores_libros.csv");
         var libros = RepositorioLibros.ObtenerLibrosDesdeCSV(rutaCSV);
-        var librosAutor = libros.Where(l => l.autor.id == autorId).ToList();
+        var librosAutor = libros.Where(l => l?.autor?.id == autorId).ToList();
 
         if (librosAutor.Count == 0)
         {
@@ -37,7 +37,7 @@ public class LibroController : Controller
             return View("Error");
         }
 
-        ViewBag.AutorNombre = librosAutor.First().autor.nombre;
+        ViewBag.AutorNombre = librosAutor?.First()?.autor?.nombre;
         return View(librosAutor);
     }
 

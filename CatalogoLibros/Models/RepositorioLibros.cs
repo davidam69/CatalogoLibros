@@ -25,10 +25,11 @@ namespace CatalogoLibros.Models
                     var autor = autores.FirstOrDefault(a => a.id == registro.autor_id);
                     libros.Add(new Libro
                     {
-                        id = registro.autor_id * 100 + libros.Count(l => l.autor.id == registro.autor_id) + 1,
+                        id = registro.autor_id * 100 + libros.Count(l => l?.autor?.id == registro.autor_id) + 1,
                         titulo = registro.libro_titulo,
                         anioPublicacion = registro.anio_publicacion,
-                        autor = autor
+                        autor = autor,
+                        sinopsis = registro.sinopsis
                     });
                 }
             }
@@ -43,5 +44,6 @@ namespace CatalogoLibros.Models
         public string? autor_nombre { get; set; }
         public string? libro_titulo { get; set; }
         public int anio_publicacion { get; set; }
+        public string? sinopsis { get; set; }
     }
 }
