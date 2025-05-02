@@ -3,6 +3,7 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th>Portada</th>
 			<th>Título</th>
 			<th>Año</th>
 			<th>Autor</th>
@@ -13,10 +14,14 @@
 		{
 			<tr>
 				<td>
+					<!-- Se muestra la imagen de la portada del libro -->
+					<img src="@libro.UrlImagen" alt="Portada de @libro.titulo" width="80" />
+				</td>
+				<td>
 					<a asp-controller="Libro" asp-action="Detalle" asp-route-id="@libro.id">@libro.titulo</a>
 				</td>
 				<td>@libro.anioPublicacion</td>
-				<td><a asp-controller="Libro" asp-action="PorAutor" asp-route-autorId="@libro.autor.id">@libro.autor.nombre</a></td>
+				<td><a asp-controller="Libro" asp-action="PorAutor" asp-route-autorId="@libro?.autor?.id">@libro?.autor?.nombre</a></td>
 			</tr>
 		}
 	</tbody>

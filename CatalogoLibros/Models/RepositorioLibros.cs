@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Reflection.PortableExecutable;
 using CatalogoLibros.Models;
 using CsvHelper;
 
@@ -10,8 +11,15 @@ namespace CatalogoLibros.Models
         {
             var libros = new List<Libro>();
 
+            var config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = "|",
+                HeaderValidated = null,
+                MissingFieldFound = null
+            };
+
             using (var reader = new StreamReader(rutaCSV))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csv = new CsvReader(reader, config))
             {
                 var registros = csv.GetRecords<LibroCSV>().ToList();
 
@@ -29,13 +37,15 @@ namespace CatalogoLibros.Models
                         titulo = registro.libro_titulo,
                         anioPublicacion = registro.anio_publicacion,
                         autor = autor,
-                        sinopsis = registro.sinopsis
+                        sinopsis = registro.sinopsis,
+                        UrlImagen = registro.UrlImagen
                     });
                 }
             }
 
             return libros;
         }
+
     }
 
     public class LibroCSV
@@ -45,5 +55,6 @@ namespace CatalogoLibros.Models
         public string? libro_titulo { get; set; }
         public int anio_publicacion { get; set; }
         public string? sinopsis { get; set; }
+        public string? UrlImagen { get; set; }
     }
 }

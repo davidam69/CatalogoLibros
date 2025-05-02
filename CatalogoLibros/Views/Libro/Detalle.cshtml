@@ -1,10 +1,11 @@
 ﻿@model CatalogoLibros.Models.Libro
 
 <h2>Detalle del Libro</h2>
-<ul>
-    <li><strong>Título:</strong> @Model.titulo</li>
-    <li><strong>Año:</strong> @Model.anioPublicacion</li>
-    <li><strong>Autor:</strong> @Model?.autor?.nombre</li>
-	<li><strong>Sinopsis:</strong> @Model?.sinopsis</li>
-</ul>
-<a asp-controller="Libro" asp-action="Index">Volver al catálogo</a>
+<div>
+    <img src="@Model.UrlImagen" alt="Portada de @Model.titulo" width="80" />
+    <p><strong>Título:</strong> @Model.titulo</p>
+    <p><strong>Año:</strong> @Model.anioPublicacion</p>
+    <p><strong>Autor:</strong> @Model?.autor?.nombre</p>
+	<p><strong>Sinopsis:</strong> @Model?.sinopsis</p>
+    <a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a>
+</div>

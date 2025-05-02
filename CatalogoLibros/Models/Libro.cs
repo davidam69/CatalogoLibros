@@ -7,6 +7,6 @@
         public int anioPublicacion { get; set; }
         public Autor? autor { get; set; }
         public string? sinopsis{ get; set; }
-
+        public string? UrlImagen { get; set; }
     }
 }

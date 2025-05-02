@@ -5,6 +5,7 @@
 <table class="table">
     <thead>
         <tr>
+			<th>Portada</th>
             <th>Título</th>
             <th>Año</th>
 			<th>Sinopsis</th>
@@ -14,6 +15,7 @@
         @foreach (var libro in Model)
         {
             <tr>
+                <td><img src="@libro.UrlImagen" alt="Portada de @libro.titulo" width="80" /></td>
                 <td>
                     <a asp-controller="Libro" asp-action="Detalle" asp-route-id="@libro.id">@libro.titulo</a>
                 </td>
@@ -24,5 +26,5 @@
     </tbody>
 </table>
 
-<a asp-controller="Libro" asp-action="Index">Volver al catálogo</a>
+<a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a>
 
