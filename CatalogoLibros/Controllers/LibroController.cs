@@ -41,4 +41,9 @@ public class LibroController : Controller
         return View(librosAutor);
     }
 
+    public IActionResult Privacidad()
+    {
+        return View();
+    }
+
 }
