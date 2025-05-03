@@ -1,11 +1,15 @@
 ﻿@model CatalogoLibros.Models.Libro
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/estilos.css" />
+}
+
 <h2>Detalle del Libro</h2>
-<div>
-    <img src="@Model.UrlImagen" alt="Portada de @Model.titulo" width="80" />
-    <p><strong>Título:</strong> @Model.titulo</p>
-    <p><strong>Año:</strong> @Model.anioPublicacion</p>
-    <p><strong>Autor:</strong> @Model?.autor?.nombre</p>
-	<p><strong>Sinopsis:</strong> @Model?.sinopsis</p>
-    <a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a>
-</div>
+<table class="table">
+    <tr><td><img src="@Model.UrlImagen" alt="Portada de @Model.titulo" width="80" /></td></tr>
+    <tr><td><p><strong>Título:</strong> @Model.titulo</p></td></tr>
+    <tr><td><p><strong>Año:</strong> @Model.anioPublicacion</p></td></tr>
+    <tr><td><p><strong>Autor:</strong> @Model?.autor?.nombre</p></td></tr>
+    <tr><td><p><strong>Sinopsis:</strong> @Model?.sinopsis</p></td></tr>
+    <tr><a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a></tr>
+</table>
