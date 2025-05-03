@@ -3,15 +3,20 @@ using CatalogoLibros.Models;
 public class LibroController : Controller
 {
 
-    public IActionResult Index()
-    {
-        var rutaCSV = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/autores_libros.csv");
-        var libros = RepositorioLibros.ObtenerLibrosDesdeCSV(rutaCSV);
-        return View(libros);
-    }
+     public IActionResult Index()
+     {
+         ViewBag.ColorFondo = TempData["ColorFondo"] ?? "white";
+         TempData.Keep("ColorFondo");
+         var rutaCSV = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/autores_libros.csv");
+         var libros = RepositorioLibros.ObtenerLibrosDesdeCSV(rutaCSV);
+         return View(libros);
+     }
+
 
     public IActionResult Detalle(int id)
     {
+        ViewBag.ColorFondo = TempData["ColorFondo"] ?? "white";
+        TempData.Keep("ColorFondo"); // mantiene TempData para futuras páginas
         var rutaCSV = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/autores_libros.csv");
         var libros = RepositorioLibros.ObtenerLibrosDesdeCSV(rutaCSV);
         var libro = libros.FirstOrDefault(l => l.id == id);
@@ -27,6 +32,8 @@ public class LibroController : Controller
 
     public IActionResult PorAutor(int autorId)
     {
+        ViewBag.ColorFondo = TempData["ColorFondo"] ?? "white";
+        TempData.Keep("ColorFondo"); // mantiene TempData para futuras páginas
         var rutaCSV = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/autores_libros.csv");
         var libros = RepositorioLibros.ObtenerLibrosDesdeCSV(rutaCSV);
         var librosAutor = libros.Where(l => l?.autor?.id == autorId).ToList();
@@ -43,7 +50,15 @@ public class LibroController : Controller
 
     public IActionResult Privacidad()
     {
+        ViewBag.ColorFondo = TempData["ColorFondo"] ?? "white";
+        TempData.Keep("ColorFondo"); // mantiene TempData para futuras páginas
         return View();
+    }
+
+    public IActionResult CambiarFondo(string color)
+    {
+        TempData["ColorFondo"] = color;
+        return RedirectToAction("Index");
     }
 
 }

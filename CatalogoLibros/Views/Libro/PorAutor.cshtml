@@ -1,34 +1,37 @@
 ﻿@model List<CatalogoLibros.Models.Libro>
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/estilos.css" />
+<h2>Libros del Autor: @Model.FirstOrDefault()?.autor?.nombre</h2>
+
+@if (!Model.Any())
+{
+    <p>@ViewBag.Mensaje</p>
 }
-
-<h2>Libros de @ViewBag.AutorNombre</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-			<th>Portada</th>
-            <th>Título</th>
-            <th>Año</th>
-			<th>Sinopsis</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var libro in Model)
-        {
+else
+{
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td><img src="@libro.UrlImagen" alt="Portada de @libro.titulo" width="80" /></td>
-                <td>
-                    <a asp-controller="Libro" asp-action="Detalle" asp-route-id="@libro.id">@libro.titulo</a>
-                </td>
-                <td>@libro.anioPublicacion</td>
-				<td>@libro.sinopsis</td>
+			    <th>Portada</th>
+                <th>Título</th>
+                <th>Año</th>
+			    <th>Sinopsis</th>
             </tr>
-        }
-    </tbody>
-</table>
-
+        </thead>
+        <tbody>
+            @foreach (var libro in Model)
+            {
+                <tr>
+                    <td><img src="@libro.UrlImagen" alt="Portada de @libro.titulo" width="80" /></td>
+                    <td>
+                        <a asp-controller="Libro" asp-action="Detalle" asp-route-id="@libro.id">@libro.titulo</a>
+                    </td>
+                    <td>@libro.anioPublicacion</td>
+				    <td>@libro.sinopsis</td>
+                    <td><a href="@Url.Action("Detalle", "Libro", new { id = libro.id })" class="btn btn-info">Ver detalles</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 <a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a>
 

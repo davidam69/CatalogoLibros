@@ -1,15 +1,17 @@
 ﻿@model CatalogoLibros.Models.Libro
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/estilos.css" />
-}
-
 <h2>Detalle del Libro</h2>
-<table class="table">
-    <tr><td><img src="@Model.UrlImagen" alt="Portada de @Model.titulo" width="80" /></td></tr>
-    <tr><td><p><strong>Título:</strong> @Model.titulo</p></td></tr>
-    <tr><td><p><strong>Año:</strong> @Model.anioPublicacion</p></td></tr>
-    <tr><td><p><strong>Autor:</strong> @Model?.autor?.nombre</p></td></tr>
-    <tr><td><p><strong>Sinopsis:</strong> @Model?.sinopsis</p></td></tr>
-    <tr><a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a></tr>
-</table>
+<div>
+    <h3>@Model.titulo</h3>
+    <table class="table">
+        <tbody>
+            <tr><td><img src="@Model.UrlImagen" alt="Portada de @Model.titulo" width="80" /></td></tr>
+            <tr>
+                <td><p><strong>Año:</strong> @Model.anioPublicacion</p></td>
+                <td><p><strong>Autor:</strong> @Model?.autor?.nombre</p></td>
+                <td><p><strong>Sinopsis:</strong> @Model?.sinopsis</p></td>
+                <a asp-controller="Libro" asp-action="Index" class="btn btn-secondary">Volver al catalogo</a>
+            </tr>
+        </tbody>
+	</table>
+</div>

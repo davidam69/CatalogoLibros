@@ -5,6 +5,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+
 // Configurar la canalización de solicitudes HTTP.
 if (!app.Environment.IsDevelopment())
 {
