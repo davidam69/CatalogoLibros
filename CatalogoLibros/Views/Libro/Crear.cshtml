@@ -1,0 +1,13 @@
+﻿@model CatalogoLibros.Models.Libro
+
+<div class="mb-3">
+	<label for="autorId">Crear Autor</label>
+	<select asp-for="autor.id" class="form-select">
+		@foreach (var autor in ViewBag.autores as List<Autor>)
+		{
+			<option value="@autor.id">@autor.nombre</option>
+		}
+	</select>
+</div>
+
+

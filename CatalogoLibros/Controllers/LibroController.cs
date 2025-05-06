@@ -61,4 +61,50 @@ public class LibroController : Controller
         return RedirectToAction("Index");
     }
 
+    [HttpGet]
+    public IActionResult Crear()
+    {
+        ViewBag.Autores = ObtenerAutores(); // Este método debe devolverte una lista de autores.
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Crear(Libro libro)
+    {
+        if (!ModelState.IsValid)
+        {
+            ViewBag.Autores = ObtenerAutores(); // Necesario para volver a cargar la lista si hay errores
+            return View(libro);
+        }
+
+        // Simular almacenamiento. Podrías guardar en una lista o base de datos.
+        // libro.Id = GenerarId(); si lo necesitas
+        // libros.Add(libro);
+
+        return RedirectToAction("Detalle", new { id = libro.id });
+    }
+
+    public  List<Autor> ObtenerAutores()
+    {
+        var rutaCSV = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/autores_libros.csv");
+        var autores = new List<Autor>();
+
+        var lineas = System.IO.File.ReadAllLines(rutaCSV);
+
+        foreach (var linea in lineas.Skip(1)) // Saltar encabezado
+        {
+            var partes = linea.Split(',');
+
+            if (partes.Length >= 2 && int.TryParse(partes[0], out int id))
+            {
+                autores.Add(new Autor
+                {
+                    id = id,
+                    nombre = partes[1]
+                });
+            }
+        }
+
+        return autores;
+    }
 }
